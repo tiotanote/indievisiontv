@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  background: #111;
+  color: white;
+  font-family: Arial;
+  overflow: hidden;
+}
+
+.hero {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 50px;
+}
+
+/* IZQUIERDA */
+
+.left {
+  width: 50%;
+}
+
+.left h1 {
+  font-size: 70px;
+  margin: 0;
+}
+
+.left p {
+  font-size: 25px;
+  color: #aaa;
+}
+
+/* BOTON */
+
+button {
+  margin-top: 20px;
+
+  background: #110558;
+  color: white;
+
+  border: none;
+  padding: 15px 30px;
+
+  font-size: 20px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: #0025a0;
+}
+
+/* DERECHA */
+
+.right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+/* GIF */
+
+.gif {
+  width: min(400px, 90%);
+
+  animation: fadeUp 1.5s ease;
+
+  animation:
+fadeUp 1.5s ease,
+float 3s ease-in-out infinite;
+}
+
+/* ANIMACION */
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes float {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 20px;
+  }
+
+  .left,
+  .right {
+
+    width: 100%;
+  }
+
+  .left h1 {
+  font-size: clamp(40px, 8vw, 70px);
+  }
+
+  .left p {
+  font-size: clamp(18px, 3vw, 25px);
+  }
+
+  .gif {
+
+    width: 250px;
+
+    margin-top: 30px;
+  }
+
+}
