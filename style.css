@@ -1,0 +1,235 @@
+@font-face {
+  font-family: "chicalo";
+  src: url("C:\\Windows\\Fonts\\Chicalo Normal.otf") format("truetype");
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #000000;
+  color: rgb(0, 4, 255);
+  font-family: "chicalo", Arial, sans-serif;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 50px;
+  background: transparent;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.25) 35%,
+      rgba(0, 0, 0, 0.55) 100%
+    ),
+    url("iv fondo.png") center/cover no-repeat;
+  z-index: -1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+  z-index: -1;
+}
+
+/* IZQUIERDA */
+
+.left,
+.right {
+  position: relative;
+  z-index: 1;
+}
+
+.left {
+  width: 70%;
+}
+
+.left h1 {
+  font-size: 70px;
+  margin: 0;
+}
+
+.left p {
+  font-size: 25px;
+  color: #aaa;
+}
+
+/* BOTON */
+
+button {
+  margin-top: 20px;
+
+  background: #040018;
+  color: white;
+
+  border: none;
+  padding: 15px 30px;
+
+  font-size: 20px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: #000000;
+}
+
+/* DERECHA */
+
+.right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+/* GIF */
+
+.gif {
+  width: min(1000px, 90%);
+
+  animation: fadeUp 1.5s ease, float 3s ease-in-out infinite;
+}
+
+/* ANIMACION */
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes float {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+
+    flex-direction: column-reverse;
+
+    text-align: center;
+
+    padding: 20px;
+  }
+
+  .left,
+  .right {
+
+    width: 100%;
+  }
+
+  .left h1 {
+
+    font-size: clamp(40px, 10vw, 70px);
+  }
+
+  .left p {
+
+    font-size: clamp(18px, 4vw, 25px);
+  }
+
+  .gif {
+
+    width: min(300px, 90%);
+
+    margin-bottom: 30px;
+  }
+
+}
+
+.more {
+  position: relative;
+  min-height: 130vh;
+  padding: 140px 50px 140px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 20%), #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.more::before {
+  content: "";
+  position: absolute;
+  top: -18%;
+  left: 0;
+  right: 0;
+  height: 32%;
+  background: #000000;
+  transform: skewY(-8deg);
+  transform-origin: bottom left;
+  z-index: -1;
+}
+
+.more::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12%;
+  height: 22%;
+  background: #000000;
+  transform: skewY(-8deg);
+  transform-origin: top left;
+  z-index: -1;
+}
+
+.more-content {
+  max-width: 800px;
+  text-align: center;
+}
+
+.more-content h2 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.more-content p {
+  font-size: 22px;
+  color: #bbb;
+  line-height: 1.6;
+}
